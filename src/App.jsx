@@ -2,12 +2,14 @@ import { useState } from 'react'
 import './App.css'
 //import "./firebase";
 import Chat from './components/Chat'
+import User from './components/User'
 
 
 function App() {
 
   return (
     <div className="App">
+      <User/>
       <Chat/>
     </div>
   )

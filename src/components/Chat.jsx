@@ -16,14 +16,13 @@ export default function Chat() {
 
       querySnapshot.forEach(item => {
         currentMessages.push({ content: item.data(), id: item.id })
-        console.log(item.data());
       })
       setMessages(currentMessages);
     })
 
     return unsubscribe;
 
-  })
+  }, [])
   
   return (
     <section className='chat-content'>
