@@ -14,6 +14,8 @@ export default function SendMessage() {
 
     const { uid, displayName, photoURL } = auth.currentUser;
 
+    if (!input.trim()) return;
+
     await addDoc(collection(db, 'messages'), {
       text: input,
       name: displayName,
@@ -23,7 +25,6 @@ export default function SendMessage() {
     });
 
     setInput("");
-
   }
 
   const emoji = () => setOpen('open')
@@ -31,6 +32,7 @@ export default function SendMessage() {
 
   const onEmojiClick = (emojiData) => {
     setInput(`${input}${emojiData.emoji}`)
+    closeEmoji();
   }
 
   return (
@@ -61,7 +63,7 @@ export default function SendMessage() {
         onChange={e=>setInput(e.target.value)}
       />
 
-      <button type='submit'>Send</button>
+      <button type='submit' className='btn-emoji'><i className="fa-solid fa-location-arrow"></i></button>
     </form>
   )
 }

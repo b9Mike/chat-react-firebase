@@ -19,68 +19,102 @@
 }
 
 /* Message Section */
+/* ====== MENSAJE DE OTROS ====== */
 .message {
-  text-align: left;
-  margin-bottom: 10px;
   display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
 }
-.message .text-message {
-  background-color: #1A233B;
-  display: inline-block;
-  border-radius: 12px;
-  padding: 0 14px;
-}
+
 .message > div {
   display: inline-block;
   order: 1;
 }
+
 .message img {
-  width: 45px;
-  height: 45px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  vertical-align: top;
-  margin-right: 10px;
   object-fit: cover;
-  order: 0;
-}
-.message p.text{
-  color: #fff;
-  line-height: 15px;
-}
-.message p.user {
-  font-size: 14px;
-  margin-top: 3px;
 }
 
-.my-message {
-  text-align: right;
-  margin-bottom: 10px;
+.message .bubble {
+  max-width: 75%;
   
 }
-.my-message .text-message {
-  background-color: #fff;
-  display: inline-block;
-  border-radius: 12px;
-  padding: 0 14px;
-  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+
+.message .text-message {
+  background: #1A233B;
+  color: white;
+  padding: 1px 14px;
+  border-radius: 14px 14px 14px 4px;
+  word-wrap: break-word;
+  text-align: left;
+  width: fit-content;
 }
-.my-message > div {
-  display: inline-block;
+
+.message .user {
+  font-size: 12px;
+  color: #9aa4c3;
+  margin: 0 0 3px 2px;
+  text-align: left;
 }
+
+.message .time {
+  font-size: 11px;
+  color: #8b95b2;
+  margin-top: 4px;
+  text-align: left;
+}
+
+
+/* ====== MI MENSAJE ====== */
+.my-message {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
 .my-message img {
-  width: 45px;
+  order: 2;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  vertical-align: top;
-  margin-left: 10px;
+  object-fit: cover;
 }
-.my-message p.text{
+
+.my-message .bubble {
+  max-width: 75%;
+  text-align: right;
+}
+
+.my-message .text-message {
+  background: #ffffff;
   color: #1A233B;
-  line-height: 15px;
+  padding: 1px 14px;
+  border-radius: 14px 14px 4px 14px;
+  box-shadow: 0 3px 6px rgba(0,0,0,.08);
+  display: inline-block;
 }
-.my-message p.user {
-  font-size: 14px;
-  margin-top: 3px;
+
+
+
+.my-message .user {
+  font-size: 12px;
+  color: #526182;
+  margin: 0 2px 3px 0;
+  text-align: right;
 }
+
+.my-message .time {
+  font-size: 11px;
+  color: #6c7899;
+  margin-top: 4px;
+  text-align: right;
+}
+
 
 /* Send Message Component */
 form {
@@ -103,7 +137,7 @@ input[type="text"] {
 }
 form button {
   background-color: #004DFC;
-  padding: 15px 0;
+  padding: 15px 10px;
   font-size: inherit;
   border-radius: 8px;
   outline: none;
@@ -113,6 +147,7 @@ form button {
   transition: .3s;
   cursor: pointer;
 }
+
 form button:hover {
   background-color: #1A233B;
 }
@@ -218,6 +253,7 @@ button.close-emoji{
   padding: 2px;
   background-color: #ffffff00;
 }
+
 button.close-emoji:hover {
   background-color: #ffffff00;
 }

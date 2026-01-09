@@ -13,16 +13,21 @@ export default function Message({ message }) {
   }
 
   const image = (message.photo != null) ? message.photo : "/userImage.png";
-
+  
   return (
     <article className={newStyle}>
-      <div>
+      <img src={image} alt="user photo" />
+
+      <div className="bubble">
+        <p className="user">{message.name}</p>
+
         <div className="text-message">
           <p className="text">{message.text}</p>
         </div>
+
         <p className="time">{formatDate(message.timestamp)}</p>
       </div>
-      <img src={image} alt="user photo" />
     </article>
+
   )
 }
